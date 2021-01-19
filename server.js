@@ -7,11 +7,12 @@ import { h } from 'hyperapp'
 const app = new App()
 const config = await loadConfiguration({}, './snowpack.config.cjs')
 
-const server = await startServer(config)
+const server = await startServer({
+  config
+})
 const runtime = server.getServerRuntime()
 
 app.use(async (req, res, next) => {
-  
   const importedComponent = await runtime.importModule('/dist/Page.js')
   const Page = importedComponent.exports.default
   
