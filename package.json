@@ -1,0 +1,14 @@
+{
+	"type": "module",
+	"dependencies": {
+		"@tinyhttp/app": "^1.1.10",
+		"fs": "^0.0.1-security",
+		"hyperapp": "^2.0.8",
+		"hyperapp-render": "^3.5.0",
+		"snowpack": "^3.0.11"
+	},
+	"scripts": {
+		"dev": "snowpack dev",
+		"build": "snowpack build"
+	}
+}
