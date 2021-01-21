@@ -1,6 +1,7 @@
 dependencies:
   hyperapp: 2.0.8
   hyperlit: 0.3.6_hyperapp@2.0.8
+  milligram: 1.4.1
 devDependencies:
   parcel: 1.12.4
   postcss-modules: 4.0.0
@@ -3452,6 +3453,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA==
+  /milligram/1.4.1:
+    dependencies:
+      normalize.css: 8.0.1
+    dev: false
+    resolution:
+      integrity: sha512-RCgh/boHhcXWOUfKJWm3RJRoUeaEguoipDg0mJ31G0tFfvcpWMUlO1Zlqqr12K4kAXfDlllaidu0x7PaL2PTFg==
   /mime-db/1.45.0:
     dev: true
     engines:
@@ -3618,6 +3625,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
+  /normalize.css/8.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
   /nth-check/1.0.2:
     dependencies:
       boolbase: 1.0.0
@@ -5843,6 +5854,7 @@ packages:
 specifiers:
   hyperapp: ^2.0.8
   hyperlit: ^0.3.6
+  milligram: ^1.4.1
   parcel: ^1.12.4
   postcss-modules: ^4.0.0
   postcss-preset-env: ^6.7.0

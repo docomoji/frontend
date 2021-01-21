@@ -2,11 +2,12 @@
   "type": "module",
   "dependencies": {
     "hyperapp": "^2.0.8",
-    "hyperlit": "^0.3.6"
+    "hyperlit": "^0.3.6",
+    "milligram": "^1.4.1"
   },
   "scripts": {
-    "dev": "snowpack dev",
-    "build": "snowpack build"
+    "dev": "parcel src/index.html -p 8080",
+    "build": "parcel build src/index.html"
   },
   "devDependencies": {
     "parcel": "^1.12.4",

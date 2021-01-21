@@ -1,18 +1,23 @@
+import 'milligram' 
+
 import html from 'hyperlit'
-import { RouterState } from './hooks/withLocation'
-import { Index } from './pages/Page'
-import { About } from './pages/About'
+import { Home } from './pages/home'
+
+export type RouterState = {
+  location: {
+    path: string
+    query: Record<string, any>
+  },
+  TEST?: number
+}
 
 export const Router = (state: RouterState) => {
   const { path } = state.location
 
   switch (path) {
     case '/':
-      return html`<${Index} path=${state.location.path} />`
-    case '/about':
-      return html`<${About} />`
-
+      return html`<${Home} ${state}/>`
     default:
-      return html`<h1>404</h1>`
+      return html`<h1>${JSON.stringify(state)}</h1>`
   }
 }

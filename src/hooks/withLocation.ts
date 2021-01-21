@@ -1,10 +1,3 @@
-export type RouterState = {
-  location: {
-    path: string
-    query: Record<string, any>
-  }
-}
-
 const fx = (a) => (b) => [a, b]
 
 const onRouteChanged = fx((dispatch, action) => {
@@ -29,7 +22,7 @@ const parseUrl = (url: string) => {
   }
 }
 
-const LocationChange = ({ location: _, ...state }, pathname) => ({
+const LocationChange = ({ location: _, ...state }, pathname: string) => ({
   location: parseUrl(pathname),
   ...state
 })
