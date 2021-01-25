@@ -1,19 +1,27 @@
 import 'milligram' 
-
 import html from 'hyperlit'
 import { Home } from './pages/home'
 
-export type RouterState = {
-  location: {
-    path: string
-    query: Record<string, any>
-  },
+// Types definition
+export type PageState = {
   TEST?: number
 }
 
-export const Router = (state: RouterState) => {
-  const { path } = state.location
+export type LocationProps = {
+  path: string,
+  query: Record<string, any>
+}
 
+export type RouterState = {
+  location: LocationProps
+}
+
+export type State = RouterState & PageState
+
+
+// Router view
+export const Router = (state: State) => {
+  const { path } = state.location
   switch (path) {
     case '/':
       return html`<${Home} ${state}/>`

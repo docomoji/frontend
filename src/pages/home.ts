@@ -1,13 +1,12 @@
 import html from 'hyperlit'
 import 'milligram' 
-import { RouterState } from '../router'
+import { State } from '../router'
 
-const testAction = (state: RouterState) => {
-    state.TEST = 34
-    return { ...state }
+const testAction = (state: State) => {
+    return { ...state, TEST: 34 }
 }
 
-export const Home = (state: RouterState) => {
+export const Home = (state: State) => {
     return html`
         <div>
             <header></header>
