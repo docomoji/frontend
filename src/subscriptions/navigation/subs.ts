@@ -6,9 +6,12 @@ const urlChange: DispatchFunction = (dispatch, { action }) => {
     dispatch(action, parseUrl(path))
   }
 
+  addEventListener("popstate", handler)
   addEventListener("hyperapp-location", handler)
 
-  return () => removeEventListener("hyperapp-location", handler)
+  return () => ["popstate", "hyperapp-location"].map(
+    (el) => removeEventListener(el, handler)
+  )
 }
 
 const urlRequest: DispatchFunction = (dispatch, { action }) => {
