@@ -1,6 +1,5 @@
 import 'milligram' 
 import { h, text } from 'hyperapp'
-//import html from 'hyperlit'
 import { Home } from './pages/home'
 
 // Types definition

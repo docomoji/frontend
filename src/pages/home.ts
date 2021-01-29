@@ -1,6 +1,4 @@
 import { h, text } from 'hyperapp'
-//import html from 'hyperlit'
-import 'milligram' 
 import { State } from '../router'
 
 const actions = {
