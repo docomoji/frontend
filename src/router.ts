@@ -1,5 +1,6 @@
 import 'milligram' 
-import html from 'hyperlit'
+import { h, text } from 'hyperapp'
+//import html from 'hyperlit'
 import { Home } from './pages/home'
 
 // Types definition
@@ -24,8 +25,8 @@ export const Router = (state: State) => {
   const { path } = state.location
   switch (path) {
     case '/':
-      return html`<${Home} ${state}/>`
+      return h('div', {}, Home(state))
     default:
-      return html`<h1>${JSON.stringify(state)}</h1>`
+      return h('div', {}, text(JSON.stringify(state)))
   }
 }
