@@ -1,6 +1,5 @@
 dependencies:
   hyperapp: 2.0.8
-  hyperlit: 0.3.6_hyperapp@2.0.8
   milligram: 1.4.1
 devDependencies:
   parcel: 1.12.4
@@ -2844,14 +2843,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-RZxmJ3G4VcR23RZfmK6U8KR7wHhXrbXAhKvjQuyg/kAv1bEIymdxUsrJAwtfXj0aasGU7CDQP70Gb2KwfxgJ/w==
-  /hyperlit/0.3.6_hyperapp@2.0.8:
-    dependencies:
-      hyperapp: 2.0.8
-    dev: false
-    peerDependencies:
-      hyperapp: ^2.0.5
-    resolution:
-      integrity: sha512-hu4EyBPlMylF68dnApX0NQFVoPmWLqYLaweTtw3Q7z9pqI+8pdpRVSogBL/pXdN/YViI88QEE8zLO/ORx7dzFg==
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -5853,7 +5844,6 @@ packages:
       integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 specifiers:
   hyperapp: ^2.0.8
-  hyperlit: ^0.3.6
   milligram: ^1.4.1
   parcel: ^1.12.4
   postcss-modules: ^4.0.0

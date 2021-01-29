@@ -2,7 +2,6 @@
   "type": "module",
   "dependencies": {
     "hyperapp": "^2.0.8",
-    "hyperlit": "^0.3.6",
     "milligram": "^1.4.1"
   },
   "scripts": {
