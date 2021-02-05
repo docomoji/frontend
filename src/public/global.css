@@ -1,0 +1,5 @@
+@import './font/font.css';
+
+:root {
+    font-family: 'Luciole', monospace;
+}
