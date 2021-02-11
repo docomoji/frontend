@@ -1,7 +1,0 @@
-<?xml version="1.0" standalone="yes"?>
-<svg width="192" height="192">
-<path style="fill:#000000; stroke:none;" d="M16 0L16 16L0 16L0 176L16 176L16 192L176 192L176 176L192 176L192 16L176 16L176 0L16 0z"/>
-<path style="fill:#ffffff; stroke:none;" d="M16 16L16 176L176 176L176 16L16 16z"/>
-<path style="fill:#000000; stroke:none;" d="M80 32L80 48L64 48L64 144L80 144L80 160L112 160L112 144L128 144L128 48L112 48L112 32L80 32z"/>
-<path style="fill:#ffffff; stroke:none;" d="M80 48L80 144L112 144L112 48L80 48z"/>
-</svg>

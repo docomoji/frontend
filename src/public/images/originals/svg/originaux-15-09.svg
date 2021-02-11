@@ -1,7 +1,0 @@
-<?xml version="1.0" standalone="yes"?>
-<svg width="192" height="192">
-<path style="fill:#f9af14; stroke:none;" d="M32 0L32 16L16 16L16 176L32 176L32 192L112 192L112 176L128 176L128 144L144 144L144 128L160 128L160 112L176 112L176 48L128 48L128 16L112 16L112 0L32 0z"/>
-<path style="fill:#ffffff; stroke:none;" d="M32 16L32 64L112 64L112 16L32 16z"/>
-<path style="fill:#f9af14; stroke:none;" d="M160 64L160 112L144 112L144 128L128 128L128 64L160 64z"/>
-<path style="fill:#ffffff; stroke:none;" d="M32 96L32 112L48 112L48 96L32 96M32 128L32 160L48 160L48 176L96 176L96 160L64 160L64 128L32 128z"/>
-</svg>
