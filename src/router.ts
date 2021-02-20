@@ -1,6 +1,7 @@
 import 'milligram' 
 import { h, text } from 'hyperapp'
 import { Home } from './pages/home'
+import { Tutorial } from './pages/solo'
 
 // Types definition
 export type PageState = {
@@ -25,6 +26,8 @@ export const Router = (state: State) => {
   switch (path) {
     case '/':
       return h('div', {}, Home(state))
+    case '/tutorial':
+      return h('div', {}, Tutorial(state))
     default:
       return h('div', {}, text(JSON.stringify(state)))
   }

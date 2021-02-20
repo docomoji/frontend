@@ -30,7 +30,6 @@ const urlRequest: DispatchFunction = (dispatch, { action }) => {
 
 const parseAction: PropsParsingFunction = ([ action ]) => ({ action })
 
-
 export const onUrlChange: SubscriptionFunction = toSub(
   urlChange,
   parseAction

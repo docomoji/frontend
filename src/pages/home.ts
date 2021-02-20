@@ -1,24 +1,18 @@
 import { h, text } from 'hyperapp'
 import { State } from '../router'
 
-const actions = {
-    prevent: (state, event) => {
-        event.preventDefault() 
-        return state
-    },
-    prive: (state) => state,
-    tuto: (state) => state,
-}
-
 export const Home = (state: State) => {
     return h('div', {}, [
         h('header', {}, text(JSON.stringify(state))),
         h('main', {},
-            h('form', { id: 'form', onsubmit: actions.prevent }, [
+            h('form', { id: 'form', onsubmit: state => state }, [
                 // TODO: Ajouter "l'image de profil" dans le formulaire
                 h('input', { placeholder: 'your in-game name' }, ''),
-                h('button', { onclick: actions.prive }, text('Partie Prive')),
-                h('button', { onclick: actions.tuto }, text('Tutoriel')),
+                h('button', { type: 'submit' }, text('Partie Prive')),
+                h('a', {
+                    class: ['button', 'button-outline'],
+                    href: '/tutorial'
+                }, text('Tutoriel')),
             ])
         ),
         h('footer', {}, []),
