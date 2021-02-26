@@ -1,8 +1,9 @@
-import { parseUrl, toSub } from '../utils'
+import { parseUrl, toSub } from './utils'
 
-const urlChange: DispatchFunction = (dispatch, { action }) => {
+const urlChange = (dispatch, { action }) => {
   const handler = _ => {
     const path = window.location.pathname + window.location.search
+    alert(path)
     dispatch(action, parseUrl(path))
   }
 
@@ -14,7 +15,7 @@ const urlChange: DispatchFunction = (dispatch, { action }) => {
   )
 }
 
-const urlRequest: DispatchFunction = (dispatch, { action }) => {
+const urlRequest = (dispatch, { action }) => {
   const clicks = event => {
     if (event.target.matches("a") && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
       event.preventDefault()
@@ -28,14 +29,14 @@ const urlRequest: DispatchFunction = (dispatch, { action }) => {
   return () => removeEventListener("click", clicks)
 }
 
-const parseAction: PropsParsingFunction = ([ action ]) => ({ action })
 
-export const onUrlChange: SubscriptionFunction = toSub(
+
+export const onUrlChange = toSub(
   urlChange,
-  parseAction
+  ([ action ]) => ({ action })
 )
 
-export const onUrlRequest: SubscriptionFunction = toSub(
+export const onUrlRequest = toSub(
   urlRequest,
-  parseAction
+  ([ action ]) => ({ action })
 )
