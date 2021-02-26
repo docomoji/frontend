@@ -1,7 +1,7 @@
 import { request } from '/routing/utils'
 import { SoloState } from "/routing/states";
 
-// updateOnCountdown takes the jsut updated state and check if timer.current
+// fetchOnCountdown takes the jsut updated state and check if timer.current
 // is equal to 0. If so it changes the value of state.turn.complete to true.
 // Changing this value means that the effect will be run and add to the returned array
 // to be executed as an effect by hyperapp.
@@ -10,7 +10,7 @@ const fetchOnCountdown = (state: SoloState) => [
         ...state,
         turn: {
             ...state.turn,
-            complete: state.timer.current === 0  
+            complete: state.timer.current === 0
         }
     },
     state.timer.current === 0 
