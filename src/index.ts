@@ -1,11 +1,12 @@
 import { app } from 'hyperapp'
-import { every } from '@hyperapp/time'
-import { gameTimerSub } from './routing/pages/game/subs'
+import { updateQuestion } from './routing/pages/game/effects'
+import { generateSoloGameSub } from './routing/pages/game/subs'
 import { GlobalState } from './routing/states'
+import { request } from './routing/utils'
 import { Router, parseUrl, createRoutingSubs } from '/routing/router'
 
 app({
-  init: {
+  init: [{
     // Default PlayerState values
     username: 'moi',
     avatar: 'doggo',
@@ -16,19 +17,24 @@ app({
       max: 5,
     },
     timer: {
-      current: 5,
-      base: 5
+      current: 30,
+      base: 30
     },
     // RouterState values
     location: parseUrl(window.location.pathname + window.location.search)
   },
+  request({
+    url: 'http://localhost:8080/random',
+    action: updateQuestion
+  })
+  ],
   view: Router,
   subscriptions: (state: GlobalState) => [
     ...createRoutingSubs(),
     // This solution was given to me by Zacharias Enochsson: https://github.com/zaceno
     // state.location.path === 'Game' && call_websocket_subs_here
     // Timer setInterval routine
-    state.location.path === '/solo' && ! state.turn.complete && every(1000, gameTimerSub)
+    generateSoloGameSub(state)
   ],
   node: document.getElementById('app')
 })

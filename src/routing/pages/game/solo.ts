@@ -1,23 +1,17 @@
 import { h, text } from 'hyperapp'
 import { SoloState, PlayerState, RouterState } from '/routing/states'
-
-const gameView = (state: SoloState) => {
-    return [
-        h('span', {}, text(`${ state.turn.current }/${ state.turn.max }`)),
-        h('span', {}, text('indice')),
-        h('span', {}, text('guess')),
-        h('input', { placeholder: 'ta tentative ici' }),
-        h('span', {}, text(state.timer.current))
-    ]
-}
+import { gameView, resultView } from './views'
 
 export const Solo = (state: SoloState & PlayerState & RouterState) => {
     return h('div', {}, [
         h('header', {}, []),
         h('main', {},
-            ! state.turn.complete
+            !state.turn.complete && state.turn.content
                 ? gameView(state)
-                : false
+                : state.turn.current === state.turn.max + 1
+                    ? resultView(state)
+                    // TODO: Create a view and remove the view after some delay
+                    : text('Chargement d\'une nouvelle question')
         )
     ])
 }

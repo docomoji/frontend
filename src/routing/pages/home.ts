@@ -1,5 +1,5 @@
 import { h, text } from 'hyperapp'
-import { GlobalState, RouterState } from '../states'
+import { GlobalState } from '../states'
 import { locationChange } from '../utils'
 
 const start_game = (state, event) => {

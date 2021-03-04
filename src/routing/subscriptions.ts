@@ -3,7 +3,6 @@ import { parseUrl, toSub } from './utils'
 const urlChange = (dispatch, { action }) => {
   const handler = _ => {
     const path = window.location.pathname + window.location.search
-    alert(path)
     dispatch(action, parseUrl(path))
   }
 

@@ -23,7 +23,7 @@ export type SoloState = {
       current: number
       max: number
       content: {
-        guess: string
+        emojis: string
         clue: string
         answer: string
       }

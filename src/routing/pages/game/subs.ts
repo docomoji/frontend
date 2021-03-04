@@ -1,5 +1,7 @@
+import { every } from '@hyperapp/time'
 import { request } from '/routing/utils'
-import { SoloState } from "/routing/states";
+import { RouterState, SoloState } from "/routing/states";
+import { nextTurn } from './effects'
 
 // fetchOnCountdown takes the jsut updated state and check if timer.current
 // is equal to 0. If so it changes the value of state.turn.complete to true.
@@ -15,15 +17,15 @@ const fetchOnCountdown = (state: SoloState) => [
     },
     state.timer.current === 0 
         ? request({
-            url: 'http://dummy.restapiexample.com/api/v1/employee/1',
-            action: (state, props) => {console.log(props); return state}
+            url: 'http://localhost:8080/random',
+            action: nextTurn
         })
-        : false // This false is to diffuse the effect into the dispatch func
+        : false // false is to diffuse the effect into the dispatch func
 ]
 
 // Because we use every to create our subscription we get 
 // the current date passing to the function. It is no need here so just ignoring it 
-export const gameTimerSub = (state: SoloState, _) => {
+const gameTimerSub = (state: SoloState, _) => {
     return fetchOnCountdown({ 
         ...state,
         timer: {
@@ -31,4 +33,11 @@ export const gameTimerSub = (state: SoloState, _) => {
             current: state.timer.current - 1,
         }
     })
+}
+
+export const generateSoloGameSub = (state: SoloState & RouterState) => {
+    return state.location.path === '/solo' 
+        && state.turn.current !== state.turn.max + 1 
+        && !state.turn.complete
+        && every(1000, gameTimerSub)
 }

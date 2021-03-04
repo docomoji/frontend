@@ -1,4 +1,4 @@
-import { GlobalState, LocationProps } from "./states"
+import { LocationProps } from "./states"
 
 const parseQueryString = (qs?: string) => (qs ? Object.fromEntries(new URLSearchParams(qs)) : {})
 
