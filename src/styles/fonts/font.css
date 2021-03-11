@@ -1,3 +1,4 @@
+/*
 @font-face {
     font-family: 'Luciole';
     font-style: normal;
@@ -11,10 +12,15 @@
     font-weight: normal;
     src: url('./Luciole-Regular-Italic.ttf');
 }
+*/
 
 @font-face {
     font-family: 'Luciole';
     font-style: normal;
     font-weight: normal;
     src: url('./Luciole-Regular.ttf');
+}
+
+body {
+    font-family: 'Luciole', 'Roboto', sans-serif !important;
 }

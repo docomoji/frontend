@@ -3,6 +3,9 @@ import { Question } from './api_types'
 
 export const nextTurn = (state: GlobalState, question: Question) => {
     // We need to update the question before updating the game state itself
+    // All the state changes bellow will only be applied after the updateQuestion returns.
+    // So the updateQuestion will add `question` values into the changed state and return
+    // a new state which will consist in a merge of both states.
     return updateQuestion({
             ...state,
             timer: {

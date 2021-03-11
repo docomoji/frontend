@@ -1,0 +1,16 @@
+// Overwrite primary and secondary color of milligram
+$color-primary: #5C7CFF
+$color-secondary: #FF934F
+
+$color-text: #4E517E
+
+// Need to import the milligram code after the definition of our new colors
+@import '../../../node_modules/milligram/src/milligram.sass'
+
+// Change the text color after the import to overwrite the
+// milligram default values
+h1, h2, h3, h4, h5, h6, p, li, a
+    color: $color-text
+
+body
+    color: $color-text

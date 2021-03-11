@@ -4,6 +4,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
+    "preserveSymlinks": true,
     "baseUrl": ".",
     "paths": {
       "/*": ["./src/*"]
@@ -12,16 +13,11 @@
     "allowJs": true,
     "noEmit": true,
     "plugins": [
-      {
-        // See https://github.com/mrmckeb/typescript-plugin-css-modules for more options
+      { 
         "name": "typescript-plugin-css-modules",
-        "options": {
-          "classnameTransform": "camelCaseOnly",
-          "customMatcher": "\\.(c|le|sa|sc)ss$"
-        }
       }
-    ]
+    ],
   },
-  "include": ["index.d.ts", "src/**/*"],
-  "exclude": ["node_modules", "public", ".cache", "dist"]
+  "include": ["assets.d.ts", "src/**/*"],
+  "exclude": ["node_modules", ".cache", "dist"]
 }

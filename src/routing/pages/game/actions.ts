@@ -6,14 +6,20 @@ export const onInputEnter = (state: SoloState & PlayerState, event: KeyboardEven
     if (event.key !== 'Enter') return state
 
     const input = event.target as HTMLInputElement
+    const correct_answer = input.value.toLowerCase() === state.turn.content.answer
     return [
         {
             ...state,
-            score: state.score + 1
+            score: state.score + 
+            (
+                correct_answer
+                    ? 1
+                    : 0
+            )
         },
         // We spread the result of the following statement to because we need to execute
-        // multiple effects.
-        ...(input.value === state.turn.content.answer
+        // multiple effects and hyperapp will only accept 1-dimension array.
+        ...(correct_answer
             ? [
                 // One time effect cleaning the input field
                 [(state, input) => {
@@ -22,7 +28,7 @@ export const onInputEnter = (state: SoloState & PlayerState, event: KeyboardEven
                 }, input],
                 // Retrieve a new question
                 request({
-                    url: 'http://localhost:8080/random',
+                    url: 'http://localhost:3030/random', // TODO: Change to generic link
                     action: nextTurn
                 })
             ]

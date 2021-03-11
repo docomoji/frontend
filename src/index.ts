@@ -1,3 +1,6 @@
+// Style imports
+import '/styles/fonts/font.css'
+// Logic related imports
 import { app } from 'hyperapp'
 import { updateQuestion } from './routing/pages/game/effects'
 import { generateSoloGameSub } from './routing/pages/game/subs'
@@ -9,7 +12,7 @@ app({
   init: [{
     // Default PlayerState values
     username: 'moi',
-    avatar: 'doggo',
+    avatar: 'moon',
     score: 0,
     turn: {
       complete: false,
@@ -21,10 +24,11 @@ app({
       base: 30
     },
     // RouterState values
-    location: parseUrl(window.location.pathname + window.location.search)
+    location: parseUrl(window.location.pathname + window.location.search),
+    status: 200,
   },
   request({
-    url: 'http://localhost:8080/random',
+    url: 'http://localhost:3030/random', // TODO: Change to generic link too
     action: updateQuestion
   })
   ],

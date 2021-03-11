@@ -1,4 +1,3 @@
-import 'milligram' 
 import { h } from 'hyperapp'
 import { Home, Solo, Error, Game } from './pages/exports'
 import { onUrlChange, onUrlRequest } from './subscriptions'

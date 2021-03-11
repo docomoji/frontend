@@ -5,6 +5,8 @@ export type LocationProps = {
 
 export type RouterState = {
   location: LocationProps
+  // TODO: Check requests status code and show error pages based on it
+  status: Number
 }
 
 export type PlayerState = {

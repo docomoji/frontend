@@ -1,0 +1,9 @@
+{
+    "presets": ["stage-3"],
+    "plugins": [
+        ["wildcard", {
+            "exts": ["svg", "jpg", "jpeg", "png"],
+            "useCamelCase": true
+        }]
+    ]
+}
