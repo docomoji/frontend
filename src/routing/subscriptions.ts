@@ -16,9 +16,9 @@ const urlChange = (dispatch, { action }) => {
 
 const urlRequest = (dispatch, { action }) => {
   const clicks = event => {
-    if (event.target.matches("a") && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+    const href = event.target.getAttribute("href")
+    if (event.target.matches("a") && href[0] === '/' && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
       event.preventDefault()
-      const href = event.target.getAttribute("href")
       dispatch(action, href)
     }
   }
