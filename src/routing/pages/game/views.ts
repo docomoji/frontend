@@ -14,7 +14,7 @@ export const gameView = (state: SoloState & PlayerState) => {
             // of the number of letters.
             placeholder: state.turn.content.answer.indexOf(' ') === -1
                 ? `en ${state.turn.content.answer.length} lettres`
-                : `en ${state.turn.content.answer.match(/ /g).length} mots`
+                : `en ${state.turn.content.answer.match(/ /g).length + 1} mots`
         }),
         h('span', {}, text(state.timer.current))
     ]
