@@ -578,4 +578,14 @@ body {
   color: #4E517E;
 }
 
+.row {
+  margin: 1rem 0 -1rem 0;
+}
+
+@media (min-width: 40rem) {
+  .row {
+    margin: 1rem -1rem;
+  }
+}
+
 /*# sourceMappingURL=custom.module.css.map */

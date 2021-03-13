@@ -1,5 +1,6 @@
-// Style imports
+// Global style import
 import '/styles/fonts/font.css'
+import '/styles/global.css'
 // Logic related imports
 import { app } from 'hyperapp'
 import { updateQuestion } from './routing/pages/game/effects'
@@ -12,7 +13,7 @@ app({
   init: [{
     // Default PlayerState values
     username: 'moi',
-    avatar: 'moon',
+    avatar: 'doggo',
     score: 0,
     turn: {
       complete: false,

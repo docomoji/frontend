@@ -11,7 +11,7 @@ export const Router = (state: GlobalState) => {
   const { path } = state.location
   switch (path) {
     case '/':
-      return h('div', {}, Home(state))
+      return h('div', {}, Home())
     case '/solo':
       return h('div', {}, Solo(state))
     default:
