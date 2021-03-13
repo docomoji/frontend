@@ -1,5 +1,5 @@
 {
-    "presets": ["stage-3"],
+    "presets": ["@babel/preset-env"],
     "plugins": [
         ["wildcard", {
             "exts": ["svg", "jpg", "jpeg", "png"],

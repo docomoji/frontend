@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "version": "0.0.0",
   "dependencies": {
     "@hyperapp/time": "^0.2.0",
     "hyperapp": "^2.0.12",
@@ -11,12 +12,11 @@
     "sass": "sass src/styles/milligram/custom.sass src/styles/milligram/custom.module.css"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
-    "babel-core": "^6.26.3",
     "babel-plugin-wildcard": "^6.0.0",
-    "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^5.1.2",
-    "parcel": "^1.12.4",
+    "parcel": "1.12.3",
     "postcss": "7",
     "postcss-modules": "^3.2.2",
     "postcss-nested": "^4.2.3",
