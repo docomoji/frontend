@@ -34,6 +34,7 @@ export type SoloState = {
       current: number,
       base: number
     }
+    fetching: boolean
 }
 
 export type GlobalState = RouterState & MultiplayerState & SoloState & PlayerState

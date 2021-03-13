@@ -10,12 +10,12 @@ export const onInputEnter = (state: SoloState & PlayerState, event: KeyboardEven
     return [
         {
             ...state,
-            score: state.score + 
-            (
-                correct_answer
-                    ? 1
-                    : 0
-            )
+            score: state.score + (correct_answer ? 1: 0),
+            turn: {
+                ...state.turn,
+                complete: correct_answer
+            },
+            fetching: correct_answer // If we find the correct answer we are gonna start fetching a new one
         },
         // We spread the result of the following statement to because we need to execute
         // multiple effects and hyperapp will only accept 1-dimension array.
@@ -28,7 +28,7 @@ export const onInputEnter = (state: SoloState & PlayerState, event: KeyboardEven
                 }, input],
                 // Retrieve a new question
                 request({
-                    url: 'http://localhost:3030/random', // TODO: Change to generic link
+                    url: 'https://docomoji-backend.herokuapp.com/random',
                     action: nextTurn
                 })
             ]

@@ -28,6 +28,7 @@ export const updateQuestion = (state: GlobalState, question: Question) => {
             content: {
                 ...question
             }
-        }
+        },
+        fetching: false
     }
 }

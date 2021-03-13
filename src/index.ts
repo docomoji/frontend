@@ -24,12 +24,13 @@ app({
       current: 30,
       base: 30
     },
+    fetching: true, // We are fetching the first solo game question
     // RouterState values
     location: parseUrl(window.location.pathname + window.location.search),
     status: 200,
   },
   request({
-    url: 'http://localhost:3030/random', // TODO: Change to generic link too
+    url: 'https://docomoji-backend.herokuapp.com/random',
     action: updateQuestion
   })
   ],
