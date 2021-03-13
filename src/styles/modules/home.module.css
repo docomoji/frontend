@@ -42,7 +42,7 @@
     border-top: 1px solid #FF934F;
     padding-top: 1rem;
 
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
 }
