@@ -25,9 +25,7 @@ const start_game = (state: GlobalState, event: Event) => {
 
 export const Home = () => {
     return h('div', {}, [
-        h('header', {},
-            logo()
-        ),
+        h('header', {}, logo()),
         h('main', {
             class: styles['main']
         },
