@@ -1,7 +1,7 @@
 import { h } from 'hyperapp'
-import { Home, Solo, Error, Game } from './pages/exports'
+import { Home, Solo, Error } from './pages/exports'
 import { onUrlChange, onUrlRequest } from './subscriptions'
-import { locationChange } from './utils'
+import { locationChange, reinitializeTurn } from './utils'
 import { GlobalState, LocationProps } from './states'
 
 export { parseUrl } from './utils'
@@ -11,6 +11,7 @@ export const Router = (state: GlobalState) => {
   const { path } = state.location
   switch (path) {
     case '/':
+      state = reinitializeTurn(state)
       return h('div', {}, Home())
     case '/solo':
       return h('div', {}, Solo(state))

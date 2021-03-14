@@ -1,4 +1,4 @@
-import { LocationProps } from "./states"
+import { GlobalState, LocationProps } from "./states"
 
 const parseQueryString = (qs?: string) => (qs ? Object.fromEntries(new URLSearchParams(qs)) : {})
 
@@ -21,6 +21,16 @@ export const locationChange = (_, pathname: string) => {
 // That's why the parsing function must take an argument and convert it
 // into an object.
 export const toSub = (func, parsing) => (...args) => [func, parsing(args)]
+
+export const reinitializeTurn = (state: GlobalState) => ({
+  ...state,
+  score: 0,
+  turn: {
+    ...state.turn,
+    current: 1,
+    complete: false,
+  }
+})
 
 // Returns an effect fetching the data at url. It will then dispatch 
 // action passing through the response's data. In case an error occur,
