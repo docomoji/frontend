@@ -6,7 +6,8 @@ export const onInputEnter = (state: SoloState & PlayerState, event: KeyboardEven
     if (event.key !== 'Enter') return state
 
     const input = event.target as HTMLInputElement
-    const correct_answer = input.value.toLowerCase() === state.turn.content.answer
+    const input_value = input.value.toLowerCase().trim()
+    const correct_answer =  input_value === state.turn.content.answer
     return [
         {
             ...state,
