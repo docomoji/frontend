@@ -4,9 +4,9 @@ import utils from '/styles/modules/utils.module.css'
 import styles from '/styles/modules/home.module.css'
 // Logic related imports
 import { h, text } from 'hyperapp'
+import { logo } from '/routing/pages/views/logo'
 import { GlobalState } from '../states'
 import { locationChange } from '../utils'
-import { Image } from './views/docomo'
 
 const change_username = (state: GlobalState) => {
     const username = document.getElementsByTagName('input')[0].value
@@ -25,16 +25,9 @@ const start_game = (state: GlobalState, event: Event) => {
 
 export const Home = () => {
     return h('div', {}, [
-        h('header', {
-            class: styles['header']
-        }, [
-            Image({
-                avatar: 'moon',
-                size: 75,
-                alt: 'Docomoji logo which represents a pale dark-blue moon with a star.'
-            }),
-            h('h1', { class: styles['header-title'] }, text('docomoji'))
-        ]),
+        h('header', {},
+            logo()
+        ),
         h('main', {
             class: styles['main']
         },

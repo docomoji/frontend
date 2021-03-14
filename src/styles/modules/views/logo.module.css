@@ -1,0 +1,22 @@
+/* HEADER */
+
+.header {
+    display: inline-flex;
+    justify-content: left;
+    align-items: center;
+
+    margin: 2rem;
+}
+
+.header-title {
+    margin: 0 0 0 1.5rem;
+    align-self: flex-end;
+    line-height: initial;
+    font-size: 3.6rem;
+}
+
+@media (min-width: 40rem) {
+    .header-title {
+        font-size: 4.6rem;
+    }
+}
