@@ -6,8 +6,16 @@ export const onInputEnter = (state: SoloState & PlayerState, event: KeyboardEven
     if (event.key !== 'Enter') return state
 
     const input = event.target as HTMLInputElement
-    const input_value = input.value.toLowerCase().trim()
+    // Input value is getting lowered, trimed, and then normqlized in order to 
+    // remove all the diatrics elements from letters.
+    const input_value = input.value
+        .toLowerCase()
+        .trim()
+        .normalize('NFKD')
+        .replace(/[^\w- ]/, '')
+
     const correct_answer =  input_value === state.turn.content.answer
+
     return [
         {
             ...state,
