@@ -1,0 +1,85 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: 5rem;
+}
+
+.row {
+    flex: 1 1 0;
+    margin: .5rem 0;
+}
+
+.emojis {
+    font-size: 3.6rem;
+}
+
+.input-time {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 1.5rem 0;
+}
+
+.input {
+    flex: 1 1 70%;
+    margin: 0;
+    border-radius: 0.4rem 0 0 0.4rem !important;
+}
+
+.timer {
+    /* Values of the input padding */
+    padding: 0.55rem 0;
+    flex: 1 1 1rem;
+    text-align: center;
+    
+    border-radius: 0 .4rem .4rem 0;
+    border-top: .1rem solid #d1d1d1;
+    border-bottom: .1rem solid #d1d1d1;
+    border-right: .1rem solid #d1d1d1;
+}
+
+.timer-half {
+    color: orange;
+}
+
+.rounds {
+    display: flex;
+    flex-direction: row;
+    width: 10rem;
+}
+
+.pallet {
+    height: 1.5rem;
+    flex: 1;
+}
+
+.sphere {
+    display: inline-block;
+    width: 1.5rem;
+    height: inherit;
+
+    border: 1px solid #5C7CFF;
+    border-radius: 50%;
+}
+
+.sphere.full {
+    background-color: #5C7CFF;
+}
+
+@media (min-width: 40rem) {
+    .emojis {
+        font-size: 5.6rem;
+    }
+
+    .input-time {
+        width: 70%;
+    }
+    
+    .input {
+        flex-basis: 80%;
+    }
+}

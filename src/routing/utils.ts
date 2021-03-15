@@ -52,3 +52,8 @@ export const request = (props) => {
     props
   ]
 }
+
+// Range function use to create multiple same elements inside a view
+export const multiple = (times: number, callback: (index: number) => any) => {
+  return [...Array(times).keys()].map(callback)
+}

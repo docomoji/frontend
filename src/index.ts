@@ -10,29 +10,34 @@ import { request } from './routing/utils'
 import { Router, parseUrl, createRoutingSubs } from '/routing/router'
 
 app({
-  init: [{
-    // Default PlayerState values
-    username: 'moi',
-    avatar: 'doggo',
-    score: 0,
-    turn: {
-      complete: false,
-      current: 1,
-      max: 5,
+  /*
+   * //TODO: Should request a quesiton when one of both buttons on
+             home.ts has been pressed. Need to change this behaviour ASAP.
+  */
+  init: [
+    {
+      // Default PlayerState values
+      username: 'moi',
+      avatar: 'doggo',
+      score: 0,
+      turn: {
+        complete: false,
+        current: 1,
+        max: 5,
+      },
+      timer: {
+        current: 30,
+        base: 30
+      },
+      fetching: true, // We are fetching the first solo game question
+      // RouterState values
+      location: parseUrl(window.location.pathname + window.location.search),
+      status: 200,
     },
-    timer: {
-      current: 30,
-      base: 30
-    },
-    fetching: true, // We are fetching the first solo game question
-    // RouterState values
-    location: parseUrl(window.location.pathname + window.location.search),
-    status: 200,
-  },
-  request({
-    url: 'https://docomoji-backend.herokuapp.com/random',
-    action: updateQuestion
-  })
+    request({
+      url: 'https://docomoji-backend.herokuapp.com/random',
+      action: updateQuestion
+    })
   ],
   view: Router,
   subscriptions: (state: GlobalState) => [
