@@ -3,9 +3,10 @@ import { h, text } from 'hyperapp'
 import { Image } from '/routing/pages/views/docomo'
 
 export const logo = () => {
-    return h('div', {
-            class: styles['header']
-    }, [
+    return h('a', {
+        class: styles['header'],
+        href: '/'
+    },[
         Image({
             avatar: 'moon',
             size: 75,
