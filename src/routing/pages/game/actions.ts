@@ -7,7 +7,7 @@ export const onInputEnter = (state: SoloState & PlayerState, event: KeyboardEven
 
     const input = event.target as HTMLInputElement
     // Input value is getting lowered, trimed, and then normqlized in order to 
-    // remove all the diatrics elements from letters.
+    // remove all the diacritics elements from letters.
     const input_value = input.value
         .toLowerCase()
         .trim()
