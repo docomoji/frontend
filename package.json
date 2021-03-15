@@ -6,6 +6,7 @@
     "@hyperapp/time": "^0.2.0",
     "hyperapp": "^2.0.12",
     "milligram": "^1.4.1",
+    "@tinyhttp/app": "^1.2.17",
     "sirv": "^1.0.11"
   },
   "scripts": {
